@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bliss Nombre Generador</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+        .button-hover:hover {
+            background-color: #ff3333;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+    <div class="text-center">
+        <h1 class="text-5xl font-bold text-red-600 mb-4">Generador de nombres para Araboth Roleplay</h1>
+        <p class="text-lg text-gray-300 mb-6">Nombres para Araboth Roleplay <span class="font-bold text-red-500">Araboth Roleplay</span></p>
+        
+        <div class="bg-gray-900 p-8 rounded-lg glow max-w-md w-full">
+            <div id="nameOutput" class="text-2xl font-semibold text-white mb-6">Click abajo para seleccionar un genero.</div>
+            <div class="flex space-x-4">
+                <button id="generateFemaleButton" class="bg-red-600 text-white px-6 py-3 rounded-lg button-hover w-full">
+                    Nombre Femenino
+                </button>
+                <button id="generateMaleButton" class="bg-red-600 text-white px-6 py-3 rounded-lg button-hover w-full">
+                    Nombre Masculino
+                </button>
+            </div>
+        </div>
+        
+        <footer class="mt-8 text-gray-400 text-sm">
+            <p>Creado para <a href="https://arabothrp.com" class="text-red-500 hover:underline">Araboth Roleplay</a> de parte de Bliss. | 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        const femaleFirstNames = [
+            "Elara", "Lyria", "Zara", "Nyx", "Rhea", "Selene", "Aria", "Liora", "Vera", "Mira",
+            "Aeloria", "Sylvara", "Elysia", "Vionna", "Celeste", "Aurora", "Seraphina", "Isolde", "Luna", "Evelina",
+            "Thalia", "Nerissa", "Astraea", "Vaelina", "Lyric", "Saphira", "Eirwen", "Calista", "Zelphine", "Amara",
+            "Fiora", "Yvaine", "Lyssia", "Elowen", "Myria", "Vespera", "Aelina", "Soraya", "Tindra", "Zinnia",
+            "Elysse", "Marigold", "Velira", "Aurelia", "Sylphine", "Lilith", "Nova", "Eira", "Selys", "Aelira"
+        ];
+        const maleFirstNames = [
+            "Kael", "Sylas", "Dren", "Vion", "Talon", "Rorik", "Galen", "Zane", "Cassian", "Drake",
+            "Aethon", "Varius", "Eldric", "Sorin", "Rhydian", "Zephyr", "Cillian", "Torin", "Gideon", "Ragnar",
+            "Darius", "Valthor", "Eryndor", "Sable", "Kieran", "Azrael", "Thane", "Vorian", "Caspian", "Rune",
+            "Eldrin", "Sylvan", "Dorian", "Zorak", "Tiberius", "Arden", "Vaelor", "Ryn", "Gavric", "Eamon",
+            "Sylric", "Varkis", "Zyron", "Calen", "Draven", "Tormund", "Aelar", "Vex", "Rion", "Kalthor"
+        ];
+        const lastNames = [
+            "Veyron", "Ashwood", "Nightshade", "Stormveil", "Ironclad", "Duskfall", "Starborn", "Grimholt", "Shadowend", "Bloodwyn",
+            "Frostgale", "Emberthorn", "Voidwalker", "Dawnbringer", "Ravenshield", "Moonspire", "Blackthorn", "Stormcrow", "Ironveil", "Dreadhaven",
+            "Skyclaw", "Fireforge", "Shadowmere", "Starfall", "Gloomridge", "Ashenholt", "Bloodraven", "Nightforge", "Dawnshadow", "Frosthaven",
+            "Emberfield", "Voidspire", "Ironshade", "Stormborn", "Duskwind", "Grimspire", "Shadowvale", "Starveil", "Bloodthorn", "Nightbloom",
+            "Frostveil", "Emberwind", "Voidhaven", "Ironbloom", "Stormridge", "Duskthorn", "Grimveil", "Shadowborn", "Starshade", "Bloodspire"
+        ];
+
+        const generateFemaleButton = document.getElementById('generateFemaleButton');
+        const generateMaleButton = document.getElementById('generateMaleButton');
+        const nameOutput = document.getElementById('nameOutput');
+
+        generateFemaleButton.addEventListener('click', () => {
+            const randomFirst = femaleFirstNames[Math.floor(Math.random() * femaleFirstNames.length)];
+            const randomLast = lastNames[Math.floor(Math.random() * lastNames.length)];
+            nameOutput.textContent = `${randomFirst} ${randomLast}`;
+        });
+
+        generateMaleButton.addEventListener('click', () => {
+            const randomFirst = maleFirstNames[Math.floor(Math.random() * maleFirstNames.length)];
+            const randomLast = lastNames[Math.floor(Math.random() * lastNames.length)];
+            nameOutput.textContent = `${randomFirst} ${randomLast}`;
+        });
+    </script>
+</body>
+</html>
