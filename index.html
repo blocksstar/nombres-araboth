@@ -10,6 +10,19 @@
             background-color: #1a1a1a;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
         }
         .glow {
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
@@ -20,11 +33,10 @@
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen">
-    <div class="text-center">
+<body>
+    <div class="container text-center">
         <h1 class="text-5xl font-bold text-red-600 mb-4">Generador de nombres para Araboth Roleplay</h1>
         <p class="text-lg text-gray-300 mb-6">Nombres para <span class="font-bold text-red-500">Araboth Roleplay</span></p>
-        <br>
         <div class="bg-gray-900 p-8 rounded-lg glow max-w-md w-full">
             <div id="nameOutput" class="text-2xl font-semibold text-white mb-6">Click abajo para seleccionar un genero.</div>
             <div class="flex space-x-4">
